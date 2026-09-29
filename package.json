@@ -1,0 +1,22 @@
+{
+  "name": "glass-calculator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A full-stack calculator with an Express API and glassmorphism frontend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "jest --runInBand"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^30.1.3",
+    "supertest": "^7.1.4"
+  }
+}

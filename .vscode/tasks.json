@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "calculation-desk: npm install",
+            "command": "npm install",
+            "problemMatcher": [],
+            "runOptions": {
+                "instanceLimit": 1,
+                "instancePolicy": "silent"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "calculation-desk: start",
+            "command": "node --inspect=9229 server.js",
+            "isBackground": true,
+            "dependsOn": "calculation-desk: npm install",
+            "problemMatcher": {
+                "owner": "calculation-desk",
+                "pattern": {
+                    "regexp": ".*"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Debugger listening on ws://",
+                    "endsPattern": "Calculation Desk running at http://localhost:3000"
+                }
+            },
+            "runOptions": {
+                "instanceLimit": 1,
+                "instancePolicy": "silent"
+            }
+        }
+    ]
+}

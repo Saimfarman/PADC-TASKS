@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A focused calculation desk for quick, validated arithmetic.">
+    <title>Calculation Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="Calculation Desk home"><span class="brand-mark" aria-hidden="true">+</span><span>Calculation Desk</span></a>
+        <span class="api-status"><span class="status-dot" aria-hidden="true"></span>API online</span>
+      </header>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="nav-link active" href="/">Calculator</a>
+        <a class="nav-link" href="/api/health">API health</a>
+      </nav>
+      <main class="main-content">
+        <section class="hero" aria-labelledby="page-title">
+          <p class="eyebrow">PADC / TASK 01</p>
+          <h1 id="page-title">Clear answers, one expression at a time.</h1>
+          <p>A focused calculation desk for quick arithmetic, validated by the local API and ready when you are.</p>
+        </section>
+        <div class="workspace">
+          <section class="calculator" aria-label="Calculator">
+            <div class="section-heading"><h2>Calculate</h2><span>Stateless and immediate</span></div>
+            <div class="display-wrap">
+              <p id="expression" class="expression" aria-live="polite">128 + 64</p>
+              <output id="result" class="result" aria-live="polite">192</output>
+            </div>
+            <label class="input-label" for="expression-input">Arithmetic expression</label>
+            <input id="expression-input" class="expression-input" type="text" value="128 + 64" autocomplete="off" aria-describedby="input-hint message">
+            <p id="input-hint" class="input-hint">Use numbers with +, -, *, /, %, or parentheses.</p>
+            <div class="keypad">
+          <button class="key utility" data-action="clear">AC</button>
+          <button class="key utility" data-action="backspace" aria-label="Delete last character">DEL</button>
+          <button class="key operator" data-value="%">%</button>
+          <button class="key operator" data-value="/">/</button>
+          <button class="key" data-value="7">7</button>
+          <button class="key" data-value="8">8</button>
+          <button class="key" data-value="9">9</button>
+          <button class="key operator" data-value="*">*</button>
+          <button class="key" data-value="4">4</button>
+          <button class="key" data-value="5">5</button>
+          <button class="key" data-value="6">6</button>
+          <button class="key operator" data-value="-">-</button>
+          <button class="key" data-value="1">1</button>
+          <button class="key" data-value="2">2</button>
+          <button class="key" data-value="3">3</button>
+          <button class="key operator" data-value="+">+</button>
+          <button class="key zero" data-value="0">0</button>
+          <button class="key" data-value=".">.</button>
+          <button class="key equals" data-action="calculate">=</button>
+            </div>
+            <div class="calculate-row"><button class="calculate-button" data-action="calculate">Calculate result <span aria-hidden="true">-></span></button><p id="message" class="message" role="status">Ready to calculate</p></div>
+          </section>
+          <section class="result-column" aria-labelledby="result-title">
+            <article class="result-card"><p id="result-title" class="card-label">Validated result</p><output class="card-result" for="expression-input">192</output><div class="card-meta"><span id="card-expression">128 + 64</span><span id="execution-time">Execution time: -- ms</span><span class="ready-badge">Ready</span></div></article>
+            <div class="examples" aria-label="Expression examples">
+              <article><div><strong>9 * 7</strong><span class="ready-badge">Ready</span></div><p>Result <b>63</b></p></article>
+              <article><div><strong>450 / 15</strong><span class="ready-badge">Ready</span></div><p>Result <b>30</b></p></article>
+              <article><div><strong>82 - 37</strong><span class="ready-badge">Ready</span></div><p>Result <b>45</b></p></article>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer>No accounts, persistence, files, or history. Each calculation is validated through the small Express API and then released.</footer>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
