@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Calculation Desk
 
 A small full-stack calculator built for PADC Task 1. It uses a warm, responsive browser interface and a Node.js/Express backend that validates and evaluates arithmetic expressions without `eval`.
@@ -100,3 +101,7 @@ curl -X POST http://localhost:3000/api/calculate -H "Content-Type: application/j
 ```
 
 The second request should return a result of `28`, confirming operator precedence and API connectivity.
+=======
+# PADC-TASKS
+TASK 1
+>>>>>>> e702385526f026d1a9f32e575a2ffe57f13d70ca
